@@ -7,7 +7,7 @@ $types = array(
 
      $f->fields["type"] = $f->get_FieldSelect("type",
          array(
-             "value" => $r["type"],
+             "selected" => $r["type"],
              "data" => $types,
              "proportion" => "col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"
          )
