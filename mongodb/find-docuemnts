@@ -1,0 +1,11 @@
+<?php
+// permite fiiltrar documentois ne una coleccion
+
+$documents = $mongo->find('breaches');
+foreach ($documents as $document) {
+    $c .= "<br>" . @$document->breach;
+    $c .= "<br>" . @$document->category;
+    $c .= "<br>" . @$document->created_at;
+}
+
+?>
