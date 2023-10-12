@@ -1,14 +1,12 @@
-        <?php
-        
-        $card = service("smarty");
-        $card->set_Mode("bs5x");
-        $card->caching = 0;
-        $card->assign("type", "normal");
-        $card->assign("class", "mb-3");
-        $card->assign("header",false);
-        $card->assign("image",false);
-        $card->assign("body",false);
-        $card->assign("text", $c);
-        $card->assign("footer", false);
-        return ($card->view('components/cards/index.tpl'));
-        ?>
+<?php
+$b = service("bootstrap");
+$card = $b->get_Card("delete-{$oid}", array(
+    "class" => "card-info",
+    "icon" => ICON_WARNING,
+    'title' => sprintf(lang("Clients.delete-title"), $name),
+    "text-class" => "text-center",
+    "text" => sprintf(lang("Clients.delete-message"), $name),
+    'content' => $f,
+));
+echo($card); 
+?>
